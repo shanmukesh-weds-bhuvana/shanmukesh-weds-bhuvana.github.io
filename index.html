@@ -130,7 +130,7 @@ footer p.meta{margin-top:14px;font-size:.9rem;letter-spacing:.08em;opacity:.9}
 @media (min-width:700px){.gallery .pair{gap:18px}}
 
 /* scratch card */
-.scratch-wrap{position:relative;max-width:340px;margin:26px auto 0;aspect-ratio:17/9;border-radius:14px;overflow:hidden;border:1px solid rgba(230,201,135,.5);box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.scratch-wrap{position:relative;width:min(82vw,330px);margin:24px auto 0;aspect-ratio:1/1;overflow:hidden;clip-path:path("M 165 300 C 145 278 25 190 25 100 C 25 34 105 8 165 72 C 225 8 305 34 305 100 C 305 190 185 278 165 300 Z");filter:drop-shadow(0 12px 16px rgba(0,0,0,.24))}
 .scratch-under{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(160deg,#fdf6ec,#f6e9d6);text-align:center;padding:8px}
 .su-script{font-family:'Great Vibes',cursive;font-size:1.45rem;color:#8a4448;margin:0;line-height:1.1}
 .su-dates{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.55rem;letter-spacing:.05em;margin:5px 0 3px;color:#5c2e31}
@@ -196,10 +196,10 @@ body.locked{overflow:hidden;height:100dvh}
 footer .bs-monogram{width:124px;height:92px;margin:0 auto 4px}
 #opening-petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:8}
 .hero-inner{z-index:5}
-.bouquet-moment{padding:0 20px 72px;background:var(--blush)}
+.album{padding-bottom:32px}.bouquet-moment{padding:0 20px;background:var(--blush)}.wishes{padding-top:44px}
 .bouquet-frame{max-width:920px;margin:0 auto;border-radius:24px;overflow:hidden;border:1px solid rgba(193,154,63,.32);box-shadow:0 14px 34px rgba(84,48,43,.16);background:var(--ivory)}
 .bouquet-frame img{display:block;width:100%;aspect-ratio:1.55/1;object-fit:cover;object-position:center 48%}
-@media(max-width:600px){.bouquet-moment{padding:0 24px 64px}.bouquet-frame{border-radius:18px}.hero-inner>.bs-monogram{width:98px;height:73px}footer .bs-monogram{width:108px;height:80px}}
+@media(max-width:600px){.album{padding-bottom:28px}.bouquet-moment{padding:0 24px}.wishes{padding-top:40px}.bouquet-frame{border-radius:18px}.hero-inner>.bs-monogram{width:98px;height:73px}footer .bs-monogram{width:108px;height:80px}}
 </style>
 </head>
 <body class="locked">
@@ -606,8 +606,7 @@ footer .bs-monogram{width:124px;height:92px;margin:0 auto 4px}
     ctx.font='600 '+(11*dpr)+'px Jost, sans-serif';
     ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText('S C R A T C H   T O   R E V E A L',w/2,h/2);
-    ctx.strokeStyle='rgba(92,46,49,.4)';ctx.lineWidth=1*dpr;
-    ctx.strokeRect(6*dpr,6*dpr,w-12*dpr,h-12*dpr);
+    
   }
   function pt(e){
     var r=cv.getBoundingClientRect();
@@ -759,4 +758,4 @@ footer .bs-monogram{width:124px;height:92px;margin:0 auto 4px}
  seal.addEventListener('click',function(){setTimeout(function(){cancelAnimationFrame(raf);size();p=[];for(var i=0;i<38;i++)p.push(petal(i));start=performance.now();raf=requestAnimationFrame(draw)},2350)},{once:true});addEventListener('resize',size);size();
 })();
 </script>\n</body>
-                </html>
+              </html>
