@@ -185,30 +185,42 @@ body.locked{overflow:hidden;height:100dvh}
   #cover,#cover .env-flap,#cover .env-card,#wax-seal{transition:none;animation:none}
 }
 </style>
+
+<style id="bs-bouquet-petal-styles">
+.bs-monogram{display:block;object-fit:contain;filter:drop-shadow(0 2px 5px rgba(93,48,46,.14))}
+.cov-crest+.cov-dateline{margin-top:8px}
+.env-card>.bs-monogram{width:56px;height:42px;margin:0 auto 4px}
+#cover>.cover-inner>.bs-monogram{width:68px;height:51px;margin:0 auto 8px}
+#wax-seal .bs-monogram{width:54px;height:42px;filter:sepia(.12) saturate(.9) contrast(1.08) drop-shadow(0 1px 1px rgba(65,32,15,.36))}
+.hero-inner>.bs-monogram{width:112px;height:84px;margin:0 auto 14px}
+footer .bs-monogram{width:124px;height:92px;margin:0 auto 4px}
+#opening-petals{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}
+.hero-inner{z-index:5}
+.bouquet-moment{padding:0 20px 72px;background:var(--blush)}
+.bouquet-frame{max-width:920px;margin:0 auto;border-radius:24px;overflow:hidden;border:1px solid rgba(193,154,63,.32);box-shadow:0 14px 34px rgba(84,48,43,.16);background:var(--ivory)}
+.bouquet-frame img{display:block;width:100%;aspect-ratio:1.55/1;object-fit:cover;object-position:center 48%}
+@media(max-width:600px){.bouquet-moment{padding:0 24px 64px}.bouquet-frame{border-radius:18px}.hero-inner>.bs-monogram{width:98px;height:73px}footer .bs-monogram{width:108px;height:80px}}
+</style>
 </head>
 <body class="locked">
 
 <div id="cover" role="dialog" aria-label="Wedding invitation cover">
   <div class="cover-inner">
     <p class="cov-kicker">You Are Invited</p>
-    <svg class="cov-crest" width="46" height="46" viewBox="0 0 100 100" fill="none" aria-hidden="true">
-      <circle cx="50" cy="50" r="46" stroke="#b08d57" stroke-width="2.5"/>
-      <text x="42.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#7c3f42">S</text>
-      <text x="59.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#7c3f42">B</text>
-    </svg>
+    <img class="bs-monogram" src="bs-monogram-web.png" alt="" aria-hidden="true">
     <p class="cov-dateline">December 12 &amp; 13, 2026</p>
     <p class="cov-serif">Shanmukesh<span class="and">and</span>Bhuvana</p>
     <div class="envelope">
       <div class="env-body" aria-hidden="true"></div>
       <div class="env-card" aria-hidden="true">
-        <svg width="44" height="44" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="#c9a25e" stroke-width="2.5"/><text x="42.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#8a4448">S</text><text x="59.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#8a4448">B</text></svg>
+        <img class="bs-monogram" src="bs-monogram-web.png" alt="" aria-hidden="true">
         <p class="ec-names">Shanmukesh &amp; Bhuvana</p>
         <p class="ec-date">Dec 12 &amp; 13, 2026 &middot; Bodinayakanur</p>
       </div>
       <div class="env-front" aria-hidden="true"></div>
       <div class="env-vline" aria-hidden="true"></div>
       <div class="env-flap" aria-hidden="true"></div>
-      <button id="wax-seal" aria-label="Open the invitation"><span aria-hidden="true">SB</span></button>
+      <button id="wax-seal" aria-label="Open the invitation"><img class="bs-monogram" src="bs-monogram-web.png" alt="" aria-hidden="true"></button>
     </div>
     <svg class="cov-ornament" width="96" height="28" viewBox="0 0 96 28" fill="none" aria-hidden="true">
       <path d="M48 25 C36 23 24 18 16 7" stroke="#a8823f" stroke-width="1.1"/>
@@ -243,13 +255,10 @@ body.locked{overflow:hidden;height:100dvh}
 
 
 <header class="hero">
+  <canvas id="opening-petals" aria-hidden="true"></canvas>
   <div class="hero-bg" role="img" aria-label="Shanmukesh and Bhuvana"></div>
   <div class="hero-inner">
-    <svg width="82" height="82" viewBox="0 0 100 100" fill="none" aria-hidden="true" style="margin:0 auto 18px;display:block">
-      <circle cx="50" cy="50" r="46" stroke="#e6c987" stroke-width="1.5" opacity=".95"/>
-      <text x="42.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#e6c987">S</text>
-      <text x="59.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#e6c987">B</text>
-    </svg>
+    <img class="bs-monogram" src="bs-monogram-web.png" alt="" aria-hidden="true">
     <h1>Shanmukesh <span class="amp">&amp;</span> Bhuvana</h1>
     <div class="divider" aria-hidden="true">
       <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7.5-4.9-9.8-9.2C.6 8.6 2.3 5 5.7 5c2 0 3.4 1.1 4.3 2.6h4c.9-1.5 2.3-2.6 4.3-2.6 3.4 0 5.1 3.6 3.5 6.8C19.5 16.1 12 21 12 21z" fill="#c9a24b" opacity=".95"/></svg>
@@ -357,6 +366,9 @@ body.locked{overflow:hidden;height:100dvh}
     <p class="album-note">Google Photos &middot; sign in to add yours</p>
   </div>
 </section>
+<section class="bouquet-moment" aria-label="Our first bouquet">
+  <figure class="bouquet-frame"><img src="first-bouquet.webp" alt="Bhuvana holding the first bouquet Shanmukesh gave her"></figure>
+</section>
 
 <section class="wishes" id="wishes">
   <div class="wrap reveal">
@@ -402,11 +414,7 @@ body.locked{overflow:hidden;height:100dvh}
 
 <footer>
   <div class="wrap">
-    <svg width="96" height="96" viewBox="0 0 100 100" fill="none" aria-hidden="true" style="margin:0 auto 6px;display:block">
-      <circle cx="50" cy="50" r="46" stroke="#e6c987" stroke-width="1.5" opacity=".95"/>
-      <text x="42.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#e6c987">S</text>
-      <text x="59.5" y="68" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="600" font-size="56" fill="#e6c987">B</text>
-    </svg>
+    <img class="bs-monogram" src="bs-monogram-web.png" alt="" aria-hidden="true">
     <p class="tag">We can't wait to celebrate with you</p>
     <p class="meta">December 12-13, 2026 &middot; Vanmathi Mahal, Bodinayakanur</p>
   </div>
@@ -741,5 +749,5 @@ body.locked{overflow:hidden;height:100dvh}
 })();
 </script>
 
-</body>
-                </html>
+\n<script id="opening-petal-shower">\n(function(){\n var c=document.getElementById('opening-petals'),seal=document.getElementById('wax-seal');if(!c||!seal||matchMedia('(prefers-reduced-motion: reduce)').matches)return;\n var x=c.getContext('2d'),p=[],raf=0,start=0,d=1,colors=['#aa3448','#c45263','#dc7d88','#edaaae','#922d43'];\n function size(){var r=c.getBoundingClientRect();d=Math.min(devicePixelRatio||1,2);c.width=Math.round(r.width*d);c.height=Math.round(r.height*d)}\n function petal(i){return{x:Math.random()*c.width,y:-Math.random()*c.height*.62-10*d,w:(5+Math.random()*5)*d,h:(8+Math.random()*7)*d,vy:(1.15+Math.random()*1.25)*d,vx:(Math.random()-.5)*.45*d,r:Math.random()*6.28,vr:(Math.random()-.5)*.05,ph:Math.random()*6.28,col:colors[i%colors.length],a:.62+Math.random()*.28}}\n function draw(t){x.clearRect(0,0,c.width,c.height);var e=t-start;for(var i=0;i<p.length;i++){var q=p[i];q.y+=q.vy;q.x+=q.vx+Math.sin(q.ph+q.y*.01)*.24*d;q.r+=q.vr;if(q.y>c.height+20*d){if(e<4200)p[i]=q=petal(i);else continue}x.save();x.translate(q.x,q.y);x.rotate(q.r);x.globalAlpha=q.a*Math.min(1,Math.max(0,(6000-e)/850));x.fillStyle=q.col;x.beginPath();x.moveTo(0,-q.h/2);x.bezierCurveTo(q.w/2,-q.h/5,q.w/2,q.h/3,0,q.h/2);x.bezierCurveTo(-q.w/2,q.h/3,-q.w/2,-q.h/5,0,-q.h/2);x.fill();x.restore()}if(e<6100)raf=requestAnimationFrame(draw);else x.clearRect(0,0,c.width,c.height)}\n seal.addEventListener('click',function(){cancelAnimationFrame(raf);size();p=[];for(var i=0;i<38;i++)p.push(petal(i));start=performance.now();raf=requestAnimationFrame(draw)},{once:true});addEventListener('resize',size);size();\n})();\n</script>\n</body>
+  </html>
